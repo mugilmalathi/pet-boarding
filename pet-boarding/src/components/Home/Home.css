@@ -1,0 +1,25 @@
+#table{
+    margin-top: 100px;
+    margin-left: 350px;
+}
+#table-head tr td{
+    border: 1px solid white;
+    background-color: orange;
+    color: white;
+    text-align: center;
+}
+#table-head tr td:nth-child(2){
+    width: 80px;
+} 
+#table-head tr td:nth-child(3){
+    width: 100px;
+} 
+#table-head tr td:nth-child(4){
+    width: 120px;
+} 
+#table-body{
+    border: 1px solid orange;
+    background-color: white;
+    color: orange;
+    text-align: center;
+}
