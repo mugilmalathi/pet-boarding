@@ -1,0 +1,60 @@
+{
+  "pets": [
+      {
+          "_id": "6276298c8f1e00d2e91d77be",
+          "id": 1,
+          "name": "Bravo",
+          "city": "Chennai",
+          "address": "Pallikaranai",
+          "capacity": 10,
+          "cost": 1200,
+          "veri": "Yes",
+          "rating": "4.8",
+          "createdAt": "2022-05-07T08:10:52.112Z",
+          "updatedAt": "2022-05-07T08:10:52.112Z",
+          "__v": 0
+      },
+      {
+          "_id": "627629ba8f1e00d2e91d77c0",
+          "id": 2,
+          "name": "Charlie",
+          "city": "Bangalore",
+          "address": "Madiwala",
+          "capacity": 6,
+          "cost": 600,
+          "veri": "Yes",
+          "rating": "4.2",
+          "createdAt": "2022-05-07T08:11:38.281Z",
+          "updatedAt": "2022-05-07T08:11:38.281Z",
+          "__v": 0
+      },
+      {
+          "_id": "627629cc8f1e00d2e91d77c2",
+          "id": 3,
+          "name": "Nikki",
+          "city": "Mumbai",
+          "address": "Dharavi",
+          "capacity": 11,
+          "cost": 2399,
+          "veri": "Yes",
+          "rating": "4.5",
+          "createdAt": "2022-05-07T08:11:56.612Z",
+          "updatedAt": "2022-05-07T08:11:56.612Z",
+          "__v": 0
+      },
+      {
+          "_id": "62763935477261273ce66234",
+          "id": 4,
+          "name": "Jimmi",
+          "city": "Delhi",
+          "address": "Delhi",
+          "capacity": 10,
+          "cost": 3200,
+          "veri": "No",
+          "rating": "4.1",
+          "createdAt": "2022-05-07T09:17:41.284Z",
+          "updatedAt": "2022-05-07T09:17:41.284Z",
+          "__v": 0
+      }
+  ]
+}

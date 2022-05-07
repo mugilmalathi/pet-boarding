@@ -4,14 +4,18 @@ import "./Home.css"
 
 export const Home = ()=>{
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState([])
 
     useEffect(()=>{
-        axios.get("https://backend-petdb.herokuapp.com/pets")
-        .then(({data: {data}})=>{
-            setData([...data])
-        })
+        getData();
     }, [])
+
+    const getData = ()=>{
+        axios.get("http://localhost:8080/pets")
+        .then((res)=>{
+            setData(res.data);
+        })
+    }
 
     return (
         <div id="home">
@@ -20,32 +24,33 @@ export const Home = ()=>{
                 <thead id="table-head">
                     <tr>
                         <td>Id</td>
-                        <td>Name</td>
+                        <td style={{backgroundColor:"orange"}}>Name</td>
                         <td>City</td>
-                        <td>Address</td>
+                        <td style={{backgroundColor:"orange"}}>Address</td>
                         <td>Capacity</td>
-                        <td>Cost per Day</td>
+                        <td style={{backgroundColor:"orange", width:"150px"}}>Cost per Day</td>
                         <td>Verified</td>
-                        <td>Rating</td>
+                        <td style={{backgroundColor:"orange"}}>Rating</td>
                     </tr>
+               
                 </thead>
-              
-                    {
-                        data.map(e=>
-                            <tbody id="table-body">
-                                <tr>
-                                    <td>{e.id}</td>
-                                    <td>{e.name}</td>
-                                    <td>{e.city}</td>
-                                    <td>{e.address}</td>
-                                    <td>{e.capacity}</td>
-                                    <td>{e.cost}</td>
-                                    <td>{e.veri}</td>
-                                    <td>{e.rating}</td>
-                                </tr>
-                            </tbody>
-                        )
-                    }
+              {
+                  data.map(e=>
+                    <tbody id="table-body">
+                    <tr>
+                        <td>{e.id}</td>
+                        <td style={{backgroundColor:"rgb(243, 230, 206)"}}>{e.name}</td>
+                        <td>{e.city}</td>
+                        <td style={{backgroundColor:"rgb(243, 230, 206)"}}>{e.address}</td>
+                        <td>{e.capacity}</td>
+                        <td style={{backgroundColor:"rgb(243, 230, 206)"}}>{e.cost}</td>
+                        <td>{e.veri}</td>
+                        <td style={{backgroundColor:"rgb(243, 230, 206)"}}>{e.rating}</td>
+                    </tr>
+                </tbody>
+                  )
+              }
+
             </table>
 
         </div>
