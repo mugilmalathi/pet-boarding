@@ -1,6 +1,17 @@
+import axios from "axios";
+import { useEffect, useState } from "react"
 import "./Home.css"
 
 export const Home = ()=>{
+
+    const [data, setData] = useState([]);
+
+    useEffect(()=>{
+        axios.get("http://localhost:8080/pets")
+        .then((res)=>{
+            setData(res.data);
+        })
+    })
 
     return (
         <div id="home">
@@ -18,19 +29,22 @@ export const Home = ()=>{
                         <td>Rating</td>
                     </tr>
                 </thead>
-                
-                <tbody id="table-body">
-                    <tr>
-                        <td>1</td>
-                        <td>Bob</td>
-                        <td>Chennai</td>
-                        <td>Tamilnadu</td>
-                        <td>15</td>
-                        <td>2000</td>
-                        <td>Yes</td>
-                        <td>9.8</td>
-                    </tr>
-                </tbody>
+               {
+                   data.map(e=>
+                    <tbody id="table-body">
+                        <tr>
+                            <td>{e.id}</td>
+                            <td>{e.name}</td>
+                            <td>{e.city}</td>
+                            <td>{e.address}</td>
+                            <td>{e.capacity}</td>
+                            <td>{e.cost}</td>
+                            <td>{e.veri}</td>
+                            <td>{e.rating}</td>
+                        </tr>
+                    </tbody>
+                    )
+               }
             </table>
 
         </div>
