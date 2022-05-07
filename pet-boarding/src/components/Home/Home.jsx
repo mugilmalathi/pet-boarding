@@ -7,11 +7,11 @@ export const Home = ()=>{
     const [data, setData] = useState([]);
 
     useEffect(()=>{
-        axios.get("http://localhost:8080/pets")
-        .then((res)=>{
-            setData(res.data);
+        axios.get("https://backend-petdb.herokuapp.com/pets")
+        .then(({data: {data}})=>{
+            setData([...data])
         })
-    })
+    }, [])
 
     return (
         <div id="home">
@@ -29,22 +29,23 @@ export const Home = ()=>{
                         <td>Rating</td>
                     </tr>
                 </thead>
-               {
-                   data.map(e=>
-                    <tbody id="table-body">
-                        <tr>
-                            <td>{e.id}</td>
-                            <td>{e.name}</td>
-                            <td>{e.city}</td>
-                            <td>{e.address}</td>
-                            <td>{e.capacity}</td>
-                            <td>{e.cost}</td>
-                            <td>{e.veri}</td>
-                            <td>{e.rating}</td>
-                        </tr>
-                    </tbody>
-                    )
-               }
+              
+                    {
+                        data.map(e=>
+                            <tbody id="table-body">
+                                <tr>
+                                    <td>{e.id}</td>
+                                    <td>{e.name}</td>
+                                    <td>{e.city}</td>
+                                    <td>{e.address}</td>
+                                    <td>{e.capacity}</td>
+                                    <td>{e.cost}</td>
+                                    <td>{e.veri}</td>
+                                    <td>{e.rating}</td>
+                                </tr>
+                            </tbody>
+                        )
+                    }
             </table>
 
         </div>

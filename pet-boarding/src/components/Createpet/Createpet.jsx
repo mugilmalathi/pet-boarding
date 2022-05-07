@@ -26,7 +26,7 @@ export const Createpet = ()=>{
     }
 
     const handleSubmit = (e)=>{
-        axios.post("http://localhost:8080/pets", formData)
+        axios.post("https://backend-petdb.herokuapp.com/pets", formData)
         .then(()=>{
             setFormData({
                 id: "",
@@ -49,7 +49,7 @@ export const Createpet = ()=>{
     }, [])
 
     const getData = ()=>{
-        axios.get("http://localhost:8080/pets")
+        axios.get("https://backend-petdb.herokuapp.com/pets")
         .then((res)=>{
             setData(res.data);
         })
